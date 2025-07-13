@@ -14,20 +14,31 @@
 
 .todo-app {
     width: 100%;
-    max-width: 540px;
+    max-width: 400px; 
     background: #fff;
-    margin: 100px auto 20px;
-    padding: 40px 30px 70px;
+    margin: 80px auto 20px; 
+    padding: 30px 20px 50px; 
     border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
 .todo-app h2 {
     color: #1db299;
     display: flex;
-    text-align: center;
     justify-content: center;
-    margin-bottom: 20px;
-    font-size: 50px;
+    margin-bottom: 15px; 
+    font-size: 36px; 
+    position: relative;
+}
+
+.todo-app h2::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    height: 3px;
+    width: 60px;
+    background-color: #1db299;
+    border-radius: 2px;
 }
 
 .row {
@@ -36,8 +47,8 @@
     justify-content: space-between;
     background: #edeef0;
     border-radius: 30px;
-    padding-left: 20px;
-    margin-bottom: 25px;
+    padding-left: 15px;
+    margin-bottom: 20px;
 }
 
 input {
@@ -45,53 +56,67 @@ input {
     border: none;
     outline: none;
     background: transparent;
-    padding: 15px;
+    padding: 10px;
     font-size: 14px;
 }
+
 input::placeholder {
-    color: #1db299; 
-    font-size: 18px;
-    font-weight: 600;
-    opacity: 1;  
+    color: #1db299;
+    font-size: 16px;
+    font-weight: 500;
+    opacity: 1;
 }
 
 button {
     border: none;
     outline: none;
-    padding: 16px 50px;
+    padding: 12px 30px;
     background: #1db299;
     color: #fff;
     font-weight: 600;
-    font-size: 16px;
+    font-size: 14px;
     cursor: pointer;
     border-radius: 40px;
 }
 
-.delete-all{
+.delete-all {
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: center;
+    font-size: 14px;
+    background-color: #1db299;
+    color: #fff;
+    padding: 8px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
 }
 
 ul li {
     color: #1db299;
     list-style: none;
-    font-size: 17px;
-    padding: 10px 8px 12px 50px;
+    font-size: 15px;
+    padding: 8px 8px 8px 40px;
     user-select: none;
     cursor: pointer;
     position: relative;
 }
 
+ul li.checked {
+    text-decoration: line-through;
+    color: #aaa;
+}
+
 ul li span {
     position: absolute;
-    right: 0;
-    top: 5px;
-    width: 40px;
-    height: 40px;
-    font-size: 22px;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 30px;
+    height: 30px;
+    font-size: 18px;
     color: #1db299;
-    line-height: 40px;
+    line-height: 30px;
     text-align: center;
     border-radius: 50%;
 }
